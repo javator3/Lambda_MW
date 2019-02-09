@@ -30,8 +30,13 @@ public class Main {
                         "Jan",
                         LocalDate.of(2012, 02, 12),
                         60,
-                        Arrays.asList("Michal", "Maciek")),
+                        Arrays.asList("Jan", "Maciek")),
                 new Movie("Tytul2",
+                        "Kamil",
+                        LocalDate.of(2018, 02, 12),
+                        33,
+                        Arrays.asList("Jan", "Maciek")),
+                new Movie("Tytul3",
                         "Jan",
                         LocalDate.of(2012, 02, 12),
                         20,
@@ -67,5 +72,23 @@ public class Main {
 
         System.out.println("======");
         movieListPrices.forEach(mt -> System.out.println(mt.getTitle()));
+
+        List<Movie> movieListByActor = movies
+                .stream()
+                .filter(f -> f.getActorList().contains("Jan"))
+                .collect(Collectors.toList());
+
+        List<String> moviesUpperCase = movies
+                .stream()
+                .filter(f -> f.getActorList().contains("Jan"))
+                .map(Movie::getTitle)
+                .map(f -> f.toUpperCase())
+                .collect(Collectors.toList());
+
+        System.out.println(movieListByActor);
+        moviesUpperCase.forEach(System.out::println);
+
+
+
     }
 }
