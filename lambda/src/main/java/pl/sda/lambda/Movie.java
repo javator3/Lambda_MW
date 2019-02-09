@@ -10,6 +10,17 @@ public class Movie {
     private double price;
     private List<String> actorList;
 
+
+    public Movie(String title, String direcotr, double price, List<String> actorList) {
+        this.title = title;
+        this.direcotr = direcotr;
+        this.price = price;
+        this.actorList = actorList;
+    }
+
+    public Movie() {
+    }
+
     public Movie(String title, String direcotr, LocalDate localDate, double price, List<String> actorList) {
         this.title = title;
         this.direcotr = direcotr;
